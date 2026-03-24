@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Image as ImageIcon, Video, Filter } from 'lucide-react';
+// Icons available if needed: Image, Video, Filter from 'lucide-react'
 
 const Gallery = () => {
   const [filter, setFilter] = useState('All');

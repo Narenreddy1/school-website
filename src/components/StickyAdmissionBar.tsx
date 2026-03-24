@@ -37,7 +37,7 @@ const StickyAdmissionBar = () => {
         <div className="flex gap-4 w-full md:w-auto">
           <Link
             to="/admissions"
-            className="flex-1 md:flex-none bg-accent text-primary px-6 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition-colors flex items-center justify-center gap-2"
+            className="flex-1 md:flex-none bg-accent text-primary px-6 py-2 rounded-full font-bold text-sm hover:bg-accent-dark transition-colors flex items-center justify-center gap-2"
           >
             Apply Now <ArrowRight size={16} />
           </Link>

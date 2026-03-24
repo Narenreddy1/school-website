@@ -38,6 +38,15 @@ const AppContent = () => {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/lp" element={<LandingPage />} />
+            <Route path="*" element={
+              <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
+                <h1 className="text-8xl font-extrabold text-primary mb-4">404</h1>
+                <p className="text-2xl text-gray-600 mb-8">Page Not Found</p>
+                <a href="/" className="bg-accent text-primary px-8 py-3 rounded-full font-bold hover:bg-accent-dark transition-all">
+                  Go Back Home
+                </a>
+              </div>
+            } />
           </Routes>
         </Suspense>
       </main>

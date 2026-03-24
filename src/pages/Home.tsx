@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle, Users, Trophy, BookOpen, ShieldCheck, MessageSquare, Play } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, Trophy, BookOpen, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { submitInquiry } from '@/src/services/contactService';
 
@@ -43,7 +43,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-md border border-accent/30 text-accent px-4 py-2 rounded-full text-sm font-bold mb-6">
+            <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-md border border-accent/30 text-accent-dark px-4 py-2 rounded-full text-sm font-bold mb-6">
               <Sparkles size={16} />
               <span>Admissions Open 2026-27</span>
             </div>
@@ -56,7 +56,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/admissions"
-                className="bg-accent text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-500 transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-xl"
+                className="bg-accent text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-dark transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-xl"
               >
                 Apply for Admission <ArrowRight size={20} />
               </Link>
@@ -64,7 +64,7 @@ const Home = () => {
                 to="/contact"
                 className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2"
               >
-                Book a Campus Visit <Play size={18} fill="currentColor" />
+                Book a Campus Visit <ArrowRight size={18} />
               </Link>
             </div>
           </motion.div>
@@ -253,7 +253,7 @@ const Home = () => {
                 </div>
                 <button 
                   disabled={isSubmitting}
-                  className="w-full bg-accent text-primary py-4 rounded-xl font-bold text-lg hover:bg-yellow-500 transition-all shadow-lg transform hover:-translate-y-1 disabled:opacity-50"
+                  className="w-full bg-accent text-primary py-4 rounded-xl font-bold text-lg hover:bg-accent-dark transition-all shadow-lg transform hover:-translate-y-1 disabled:opacity-50"
                 >
                   {isSubmitting ? 'Submitting...' : isSuccess ? 'Inquiry Sent!' : 'Submit Inquiry'}
                 </button>

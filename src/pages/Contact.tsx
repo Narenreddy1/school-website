@@ -44,7 +44,7 @@ const Contact = () => {
                   <div className="bg-blue-100 p-3 rounded-2xl text-primary"><MapPin size={24} /></div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">Our Address</h4>
-                    <p className="text-gray-600">123 Education Lane, Knowledge City, State, India - 560001</p>
+                    <p className="text-gray-600">Near Ramalayam, BalijaGadda Street, Gurramkonda, Annamaiah District, 517297</p>
                   </div>
                 </div>
               </div>
@@ -54,8 +54,8 @@ const Contact = () => {
                   <div className="bg-green-100 p-3 rounded-2xl text-secondary"><Phone size={24} /></div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">Phone Numbers</h4>
-                    <p className="text-gray-600">+91 98765 43210</p>
-                    <p className="text-gray-600">+91 80 1234 5678</p>
+                    <p className="text-gray-600">+91 85 0026 5050</p>
+                    <p className="text-gray-600">+91 85 0026 4040</p>
                   </div>
                 </div>
               </div>
@@ -76,7 +76,7 @@ const Contact = () => {
                   <div className="bg-purple-100 p-3 rounded-2xl text-purple-600"><Clock size={24} /></div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">Office Hours</h4>
-                    <p className="text-gray-600">Mon - Sat: 8:00 AM - 4:00 PM</p>
+                    <p className="text-gray-600">Mon - Sat: 8.30:00 AM - 4:00 PM</p>
                     <p className="text-gray-600">Sunday: Closed</p>
                   </div>
                 </div>

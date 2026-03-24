@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle, Star, Shield, Users, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { submitInquiry } from '@/src/services/contactService';
 
 const LandingPage = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData.entries());
+    
+    const success = await submitInquiry(data);
+    if (success) {
+      setIsSuccess(true);
+      (e.target as HTMLFormElement).reset();
+      setTimeout(() => setIsSuccess(false), 5000);
+    }
+    setIsSubmitting(false);
+  };
+
   return (
     <div className="bg-white min-h-screen">
       {/* Top Bar */}
@@ -26,14 +45,14 @@ const LandingPage = () => {
               Prateep Memorial School combines academic excellence with holistic development. Secure your child's future with our world-class education.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <a href="#form" className="bg-accent text-primary px-10 py-5 rounded-full font-bold text-xl hover:bg-yellow-500 transition-all shadow-xl text-center">
+              <a href="#form" className="bg-accent text-primary px-10 py-5 rounded-full font-bold text-xl hover:bg-accent-dark transition-all shadow-xl text-center">
                 Apply for Admission
               </a>
               <div className="flex items-center gap-4 px-6">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map(i => (
                     <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                      <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" />
+                      <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" referrerPolicy="no-referrer" />
                     </div>
                   ))}
                 </div>
@@ -68,27 +87,35 @@ const LandingPage = () => {
             <div className="relative bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl border border-gray-100">
               <h3 className="text-3xl font-bold mb-2 text-gray-900">Inquiry Form</h3>
               <p className="text-gray-500 mb-8">Get a call back from our admissions counselor.</p>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Parent's Name</label>
-                  <input type="text" className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary outline-none bg-gray-50" placeholder="Full Name" />
+                  <input name="parentName" required type="text" className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary outline-none bg-gray-50" placeholder="Full Name" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Mobile Number</label>
-                  <input type="tel" className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary outline-none bg-gray-50" placeholder="Phone Number" />
+                  <input name="phone" required type="tel" className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary outline-none bg-gray-50" placeholder="Phone Number" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Grade Interested</label>
-                  <select className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary outline-none bg-gray-50 appearance-none">
-                    <option>Select Grade</option>
-                    <option>Pre-Primary</option>
-                    <option>Primary</option>
-                    <option>Secondary</option>
+                  <select name="grade" required className="w-full px-4 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary outline-none bg-gray-50 appearance-none">
+                    <option value="">Select Grade</option>
+                    <option value="Pre-Primary">Pre-Primary</option>
+                    <option value="Primary">Primary</option>
+                    <option value="Secondary">Secondary</option>
                   </select>
                 </div>
-                <button className="w-full bg-primary text-white py-5 rounded-xl font-bold text-xl hover:bg-blue-900 transition-all shadow-lg">
-                  Submit Inquiry Now
+                <button 
+                  disabled={isSubmitting}
+                  className="w-full bg-primary text-white py-5 rounded-xl font-bold text-xl hover:bg-blue-900 transition-all shadow-lg disabled:opacity-50"
+                >
+                  {isSubmitting ? 'Submitting...' : isSuccess ? 'Inquiry Sent!' : 'Submit Inquiry Now'}
                 </button>
+                {isSuccess && (
+                  <p className="text-center text-green-600 font-bold">
+                    Thank you! We will contact you shortly.
+                  </p>
+                )}
                 <p className="text-center text-xs text-gray-400">
                   Privacy Guaranteed. We never spam.
                 </p>
