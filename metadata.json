@@ -1,0 +1,7 @@
+{
+  "name": "Prateep Memorial School",
+  "description": "A high-converting, modern school website for Prateep Memorial School, focusing on excellence in education and student leadership.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
