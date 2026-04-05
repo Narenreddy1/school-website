@@ -49,7 +49,7 @@ const ExitIntentPopup = () => {
             <ul className="space-y-3 mb-8">
               <li className="flex items-center gap-3 text-gray-600">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                CBSE Affiliated Excellence
+                State Board Affiliated Excellence
               </li>
               <li className="flex items-center gap-3 text-gray-600">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>

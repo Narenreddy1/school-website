@@ -1,6 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -157,7 +165,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="text-accent shrink-0" size={20} />
                 <span className="text-gray-400">
-                  Near Ramalayam, BalijaGadda Street, Gurramkonda, Annamaiah
+                  Near Ramalayam, BalijaGadda Street, Gurramkonda, Annamayya
                   District, 517297
                 </span>
               </li>
@@ -167,9 +175,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="text-accent shrink-0" size={20} />
-                <span className="text-gray-400">
-                  admissions@prateepmemorial.edu
-                </span>
+                <span className="text-gray-400">pms.gkd@gmail.com</span>
               </li>
             </ul>
           </div>

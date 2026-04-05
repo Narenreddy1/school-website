@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { cn } from '@/src/lib/utils';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/src/lib/utils";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,47 +12,53 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Academics', path: '/academics' },
-    { name: 'Facilities', path: '/facilities' },
-    { name: 'Admissions', path: '/admissions' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Academics", path: "/academics" },
+    { name: "Facilities", path: "/facilities" },
+    { name: "Admissions", path: "/admissions" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-primary/90 backdrop-blur-md py-4'
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled
+          ? "bg-white shadow-md py-2"
+          : "bg-primary/90 backdrop-blur-md py-4",
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src="/logo-removebg-preview.png" 
-              alt="Prateep Memorial School Logo" 
+            <img
+              src="/logo.webp"
+              alt="Prateep Memorial School Logo"
               className="w-12 h-12 md:w-14 md:h-14 object-contain"
               referrerPolicy="no-referrer"
             />
             <div className="flex flex-col">
-              <span className={cn(
-                "font-bold text-lg md:text-xl tracking-tight leading-none",
-                isScrolled ? "text-primary" : "text-white drop-shadow-md"
-              )}>
+              <span
+                className={cn(
+                  "font-bold text-lg md:text-xl tracking-tight leading-none",
+                  isScrolled ? "text-primary" : "text-white drop-shadow-md",
+                )}
+              >
                 Prateep Memorial
               </span>
-              <span className={cn(
-                "text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase mt-1",
-                isScrolled ? "text-gray-500" : "text-gray-200"
-              )}>
+              <span
+                className={cn(
+                  "text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase mt-1",
+                  isScrolled ? "text-gray-500" : "text-gray-200",
+                )}
+              >
                 School
               </span>
             </div>
@@ -66,9 +72,11 @@ const Navbar = () => {
                 to={link.path}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-accent",
-                  location.pathname === link.path 
-                    ? "text-accent" 
-                    : isScrolled ? "text-gray-700" : "text-white"
+                  location.pathname === link.path
+                    ? "text-accent"
+                    : isScrolled
+                      ? "text-gray-700"
+                      : "text-white",
                 )}
               >
                 {link.name}
@@ -89,7 +97,7 @@ const Navbar = () => {
               aria-label="Toggle navigation menu"
               className={cn(
                 "p-2 rounded-md",
-                isScrolled ? "text-gray-700" : "text-white"
+                isScrolled ? "text-gray-700" : "text-white",
               )}
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}

@@ -33,7 +33,7 @@ const Home = () => {
             className="w-full h-full object-cover brightness-[0.4]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-[#3b5f8a]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-white">
@@ -48,10 +48,13 @@ const Home = () => {
               <span>Admissions Open 2026-27</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-              Shaping <span className="text-accent">Future Leaders</span> with Excellence
+              Shaping <span className="text-accent">Future Leaders</span> with
+              Excellence
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed">
-              Prateep Memorial School provides a nurturing environment where innovation meets tradition. Empowering students to excel academically and socially.
+              Prateep Memorial School provides a nurturing environment where
+              innovation meets tradition. Empowering students to excel
+              academically and socially.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -71,22 +74,31 @@ const Home = () => {
         </div>
 
         {/* Floating Stats */}
-        <div className="absolute bottom-10 left-0 right-0 z-10 hidden lg:block">
+        <div className="absolute bottom-2 left-0 right-0 z-10 hidden lg:block">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-4 gap-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8">
               {[
-                { label: 'Years of Excellence', value: '25+', icon: Trophy },
-                { label: 'Happy Students', value: '2000+', icon: Users },
-                { label: 'Expert Teachers', value: '120+', icon: BookOpen },
-                { label: 'Board Affiliation', value: 'CBSE', icon: ShieldCheck },
+                { label: "Years of Excellence", value: "12+", icon: Trophy },
+                { label: "Happy Students", value: "1000+", icon: Users },
+                { label: "Expert Teachers", value: "10+", icon: BookOpen },
+                {
+                  label: "Board Affiliation",
+                  value: "State",
+                  icon: ShieldCheck,
+                },
               ].map((stat, i) => (
-                <div key={i} className="flex items-center gap-4 border-r border-white/20 last:border-0">
+                <div
+                  key={i}
+                  className="flex items-center gap-4 border-r border-white/20 last:border-0"
+                >
                   <div className="bg-accent text-primary p-3 rounded-xl">
                     <stat.icon size={24} />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-white">{stat.value}</div>
-                    <div className="text-sm text-gray-300">{stat.label}</div>
+                    <div className="text-2xl font-bold text-white">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-200">{stat.label}</div>
                   </div>
                 </div>
               ))}
@@ -99,19 +111,40 @@ const Home = () => {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">Why Choose Us</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">World-Class Education for Your Child</h3>
+            <h2 className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">
+              Why Choose Us
+            </h2>
+            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              World-Class Education for Your Child
+            </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We combine traditional values with modern technology to provide a holistic learning experience.
+              We combine traditional values with modern technology to provide a
+              holistic learning experience.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: 'Smart Classrooms', desc: 'Interactive digital boards and multimedia learning tools in every room.', icon: '💻' },
-              { title: 'Experienced Faculty', desc: 'Highly qualified educators dedicated to student success and growth.', icon: '👩‍🏫' },
-              { title: 'Digital Learning', desc: 'Advanced computer labs and coding curriculum for future-ready skills.', icon: '🚀' },
-              { title: 'Safe Campus', desc: '24/7 CCTV surveillance and strict safety protocols for peace of mind.', icon: '🛡️' },
+              {
+                title: "Smart Classrooms",
+                desc: "Interactive digital boards and multimedia learning tools in every room.",
+                icon: "💻",
+              },
+              {
+                title: "Experienced Faculty",
+                desc: "Highly qualified educators dedicated to student success and growth.",
+                icon: "👩‍🏫",
+              },
+              {
+                title: "Digital Learning",
+                desc: "Advanced computer labs and coding curriculum for future-ready skills.",
+                icon: "🚀",
+              },
+              {
+                title: "Safe Campus",
+                desc: "24/7 CCTV surveillance and strict safety protocols for peace of mind.",
+                icon: "🛡️",
+              },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -119,7 +152,9 @@ const Home = () => {
                 className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all"
               >
                 <div className="text-4xl mb-6">{item.icon}</div>
-                <h4 className="text-xl font-bold mb-4 text-gray-900">{item.title}</h4>
+                <h4 className="text-xl font-bold mb-4 text-gray-900">
+                  {item.title}
+                </h4>
                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -132,21 +167,43 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">Our Programs</h2>
-              <h3 className="text-4xl font-bold text-gray-900">Comprehensive Learning Paths</h3>
+              <h2 className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">
+                Our Programs
+              </h2>
+              <h3 className="text-4xl font-bold text-gray-900">
+                Comprehensive Learning Paths
+              </h3>
             </div>
-            <Link to="/academics" className="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all">
+            <Link
+              to="/academics"
+              className="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
+            >
               View All Programs <ArrowRight size={20} />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Pre-Primary', age: '3-5 Years', img: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Primary', age: '6-10 Years', img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Secondary', age: '11-16 Years', img: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800' },
+              {
+                name: "Pre-Primary",
+                age: "3-5 Years",
+                img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=800",
+              },
+              {
+                name: "Primary",
+                age: "6-10 Years",
+                img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800",
+              },
+              {
+                name: "Secondary",
+                age: "11-16 Years",
+                img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800",
+              },
             ].map((program, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-3xl aspect-[4/5]">
+              <div
+                key={i}
+                className="group relative overflow-hidden rounded-3xl aspect-[4/5]"
+              >
                 <img
                   src={program.img}
                   alt={program.name}
@@ -155,9 +212,14 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-8 left-8 text-white">
-                  <div className="text-accent font-bold mb-2">{program.age}</div>
+                  <div className="text-accent font-bold mb-2">
+                    {program.age}
+                  </div>
                   <h4 className="text-3xl font-bold mb-4">{program.name}</h4>
-                  <Link to="/admissions" className="bg-white text-primary px-6 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Link
+                    to="/admissions"
+                    className="bg-white text-primary px-6 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
                     Enroll Now
                   </Link>
                 </div>
@@ -171,22 +233,44 @@ const Home = () => {
       <section className="py-24 bg-primary text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-4">Testimonials</h2>
+            <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-4">
+              Testimonials
+            </h2>
             <h3 className="text-4xl font-bold">What Parents Say About Us</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Rajesh Kumar', role: 'Parent of Grade 5 Student', content: 'The transformation in my son\'s confidence and academic performance has been remarkable since joining Prateep Memorial.' },
-              { name: 'Priya Sharma', role: 'Parent of Grade 2 Student', content: 'The teachers are incredibly supportive and the digital learning tools make education fun and engaging for the kids.' },
-              { name: 'Amit Patel', role: 'Parent of Grade 8 Student', content: 'Excellent infrastructure and a very safe environment. The focus on holistic development is what sets this school apart.' },
+              {
+                name: "Subbarayudu",
+                role: "Parent of Grade 1 and Sr.KG Students",
+                content:
+                  "The transformation in my child's confidence and academic performance has been remarkable since joining Prateep Memorial.",
+              },
+              {
+                name: "Uma Maheswari",
+                role: "Parent of Grade 4 Student",
+                content:
+                  "The teachers are incredibly supportive and the learning tools make education fun and engaging for the kids.",
+              },
+              {
+                name: "Naresh H",
+                role: "Parent of Grade jr.KG Student",
+                content:
+                  "Excellent infrastructure and a very safe environment. The focus on holistic development is what sets this school apart.",
+              },
             ].map((t, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl italic">
+              <div
+                key={i}
+                className="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl italic"
+              >
                 <div className="text-accent text-4xl mb-6">"</div>
-                <p className="text-lg mb-8 text-blue-50 leading-relaxed">{t.content}</p>
+                <p className="text-lg mb-8 text-blue-50 leading-relaxed">
+                  {t.content}
+                </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-primary font-bold text-xl">
                     {t.name[0]}
@@ -207,21 +291,31 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gray-50 rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row">
             <div className="lg:w-1/2 p-12 md:p-20 bg-primary text-white flex flex-col justify-center">
-              <h3 className="text-4xl md:text-5xl font-bold mb-8">Admissions Open for 2026-27</h3>
+              <h3 className="text-4xl md:text-5xl font-bold mb-8">
+                Admissions Open for 2026-27
+              </h3>
               <p className="text-xl text-blue-100 mb-12 leading-relaxed">
-                Take the first step towards your child's bright future. Fill out the form and our admissions counselor will get in touch with you within 24 hours.
+                Take the first step towards your child's bright future. Fill out
+                the form and our admissions counselor will get in touch with you
+                within 24 hours.
               </p>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent/20 p-2 rounded-lg text-accent"><CheckCircle size={24} /></div>
+                  <div className="bg-accent/20 p-2 rounded-lg text-accent">
+                    <CheckCircle size={24} />
+                  </div>
                   <span className="text-lg">Personalized Campus Tour</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent/20 p-2 rounded-lg text-accent"><CheckCircle size={24} /></div>
+                  <div className="bg-accent/20 p-2 rounded-lg text-accent">
+                    <CheckCircle size={24} />
+                  </div>
                   <span className="text-lg">Interaction with Faculty</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent/20 p-2 rounded-lg text-accent"><CheckCircle size={24} /></div>
+                  <div className="bg-accent/20 p-2 rounded-lg text-accent">
+                    <CheckCircle size={24} />
+                  </div>
                   <span className="text-lg">Detailed Curriculum Overview</span>
                 </div>
               </div>
@@ -230,32 +324,66 @@ const Home = () => {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Parent's Name</label>
-                    <input name="parentName" required type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Enter your name" />
+                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                      Parent's Name
+                    </label>
+                    <input
+                      name="parentName"
+                      required
+                      type="text"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      placeholder="Enter your name"
+                    />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Phone Number</label>
-                    <input name="phone" required type="tel" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Enter phone number" />
+                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      name="phone"
+                      required
+                      type="tel"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      placeholder="Enter phone number"
+                    />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">Email Address</label>
-                  <input name="email" required type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Enter email address" />
+                  <label className="block text-sm font-bold text-gray-700 mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    name="email"
+                    required
+                    type="email"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                    placeholder="Enter email address"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">Class Interested In</label>
-                  <select name="grade" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all appearance-none bg-white">
+                  <label className="block text-sm font-bold text-gray-700 mb-2">
+                    Class Interested In
+                  </label>
+                  <select
+                    name="grade"
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all appearance-none bg-white"
+                  >
                     <option value="">Select Class</option>
                     <option value="Pre-Primary">Pre-Primary</option>
                     <option value="Primary">Primary (1-5)</option>
                     <option value="Secondary">Secondary (6-10)</option>
                   </select>
                 </div>
-                <button 
+                <button
                   disabled={isSubmitting}
                   className="w-full bg-accent text-primary py-4 rounded-xl font-bold text-lg hover:bg-accent-dark transition-all shadow-lg transform hover:-translate-y-1 disabled:opacity-50"
                 >
-                  {isSubmitting ? 'Submitting...' : isSuccess ? 'Inquiry Sent!' : 'Submit Inquiry'}
+                  {isSubmitting
+                    ? "Submitting..."
+                    : isSuccess
+                      ? "Inquiry Sent!"
+                      : "Submit Inquiry"}
                 </button>
                 {isSuccess && (
                   <p className="text-center text-green-600 font-bold">
@@ -263,7 +391,11 @@ const Home = () => {
                   </p>
                 )}
                 <p className="text-center text-sm text-gray-500">
-                  By submitting, you agree to our <a href="#" className="underline">Privacy Policy</a>.
+                  By submitting, you agree to our{" "}
+                  <a href="#" className="underline">
+                    Privacy Policy
+                  </a>
+                  .
                 </p>
               </form>
             </div>

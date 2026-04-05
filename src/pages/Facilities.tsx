@@ -4,7 +4,7 @@ import { Microscope, Library, Dumbbell, Bus, Shield, Wifi } from 'lucide-react';
 
 const Facilities = () => {
   const facilities = [
-    { title: 'Science Labs', desc: 'Fully equipped Physics, Chemistry, and Biology labs for hands-on exploration.', icon: Microscope, img: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800' },
+    // { title: 'Science Labs', desc: 'Fully equipped Physics, Chemistry, and Biology labs for hands-on exploration.', icon: Microscope, img: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800' },
     { title: 'Digital Library', desc: 'A vast collection of books and digital resources to inspire a love for reading.', icon: Library, img: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800' },
     { title: 'Sports Complex', desc: 'Indoor and outdoor sports facilities including basketball, football, and yoga.', icon: Dumbbell, img: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=800' },
     { title: 'Safe Transport', desc: 'GPS-enabled school buses with trained staff for safe and secure commuting.', icon: Bus, img: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800' },
@@ -16,10 +16,19 @@ const Facilities = () => {
     <div className="pt-20">
       {/* Header */}
       <section className="bg-primary py-20 text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img
+            src="logo.webp"
+            alt="School Background"
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+        </div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <h1 className="text-5xl font-bold mb-6">Campus Facilities</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            State-of-the-art infrastructure designed to provide the best learning environment for our students.
+            State-of-the-art infrastructure designed to provide the best
+            learning environment for our students.
           </p>
         </div>
       </section>
@@ -49,7 +58,9 @@ const Facilities = () => {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">{f.title}</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                    {f.title}
+                  </h3>
                   <p className="text-gray-600 leading-relaxed">{f.desc}</p>
                 </div>
               </motion.div>
@@ -66,13 +77,25 @@ const Facilities = () => {
               <Shield size={16} />
               <span>Safety First Campus</span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">Your Child's Safety is Our Priority</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              Your Child's Safety is Our Priority
+            </h2>
             <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-              We have implemented rigorous safety measures including background checks for all staff, fire safety protocols, and emergency response systems to ensure a secure environment.
+              We have implemented rigorous safety measures including background
+              checks for all staff, fire safety protocols, and emergency
+              response systems to ensure a secure environment.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {['CCTV Monitoring', 'Fire Safety', 'Staff Verification', 'First Aid Station'].map((item, i) => (
-                <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+              {[
+                "CCTV Monitoring",
+                "Fire Safety",
+                "Staff Verification",
+                "First Aid Station",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+                >
                   <div className="font-bold text-gray-900">{item}</div>
                 </div>
               ))}

@@ -5,20 +5,20 @@
  * 2. Future: Easily switch to a custom Backend API by changing the base URL and fetch logic.
  */
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-id-here"; // Replace with actual ID
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjooolq"; 
 
 export const submitInquiry = async (data: any) => {
-  console.log("Submitting inquiry:", data);
+  //console.log("Submitting inquiry:", data);
 
-  // OPTION A: Formspree (No Backend needed)
-  /*
+  // Formspree (No Backend needed)
+  
   const response = await fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
   return response.ok;
-  */
+  
 
   // OPTION B: Future Backend API
   /*
@@ -31,5 +31,5 @@ export const submitInquiry = async (data: any) => {
   */
 
   // Mock success for now
-  return new Promise((resolve) => setTimeout(() => resolve(true), 1000));
+  //return new Promise((resolve) => setTimeout(() => resolve(true), 1000));
 };
