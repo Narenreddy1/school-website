@@ -74,7 +74,7 @@ const Home = () => {
         </div>
 
         {/* Floating Stats */}
-        <div className="absolute bottom-2 left-0 right-0 z-10 hidden lg:block">
+        <div className="absolute bottom-10 left-0 right-0 z-10 hidden lg:block">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-4 gap-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8">
               {[
