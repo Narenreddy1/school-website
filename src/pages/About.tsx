@@ -136,7 +136,7 @@ const About = () => {
                 year: "2025",
                 event: "School Foundation laid with 100 students.",
               },
-              // { year: '2008', event: 'Received CBSE Affiliation and expanded to Secondary level.' },
+              // { year: '2008', event: 'Received State Affiliation and expanded to Secondary level.' },
               // { year: '2015', event: 'Inaugurated state-of-the-art Science and Computer Labs.' },
               // { year: '2022', event: 'Awarded "Best Digital School" in the region.' },
               // { year: '2026', event: 'Launching advanced AI and Robotics curriculum.' },
