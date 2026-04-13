@@ -11,9 +11,9 @@ const Gallery = () => {
   const images = [
     { id: 1, category: 'Campus', url: 'schoolentrance.webp', title: 'Main Building' },
     { id: 2, category: 'Events', url: 'event.webp', title: 'School Outing' },
-    { id: 3, category: 'Academics', url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800', title: 'Science Lab' },
-    { id: 4, category: 'Sports', url: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=800', title: 'Basketball Court' },
-    { id: 5, category: 'Campus', url: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800', title: 'Library' },
+    { id: 3, category: 'School Photography', url: 'schoolpic1.webp', title: '' },
+    { id: 4, category: 'School Photography', url: 'schoolpic3.webp', title: '' },
+    { id: 5, category: 'Celebrations', url: 'schoolpic4.webp', title: 'Birth Day' },
     { id: 6, category: 'Events', url: 'event1.webp', title: 'School Outing' },
     { id: 7, category: 'Academics', url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800', title: 'Digital Classroom' },
     { id: 8, category: 'Sports', url: 'kids.webp', title: 'Annual Sports Meet' },
@@ -125,7 +125,7 @@ const Gallery = () => {
 
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 text-white text-2xl bg-black/50 rounded-full w-10 h-10 flex items-center justify-center"
+                className="absolute top-2 right-6 text-white text-xl bg-black/50 rounded-lg w-8 h-8 flex items-center justify-center hover:text-red-600"
               >
                 ✕
               </button>

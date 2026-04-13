@@ -133,7 +133,7 @@ const About = () => {
           <div className="space-y-12">
             {[
               {
-                year: "2024",
+                year: "2025",
                 event: "School Foundation laid with 100 students.",
               },
               // { year: '2008', event: 'Received CBSE Affiliation and expanded to Secondary level.' },
